@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Question from './Question';
 import Button from '@mui/material/Button';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Fade from '@mui/material/Fade';
-import Grow from '@mui/material/Grow';
 import Stack from '@mui/material/Stack';
 
 /**
@@ -27,7 +24,7 @@ function Quiz() {
       };
 
 
-    const [questions, setQuestions] = useState([
+    const [questions] = useState([
             {
                 question:"What does KLFC stand for?",
                 options:["Korean Language Foundation Course",
@@ -70,9 +67,9 @@ function Quiz() {
                 answer:"c"
             },
             {
-                question:"Which one of these is not a NewJeans song?",
-                options:["OMG","Super Shy", "How Sweet", "Supernova"],
-                answer:"d"
+                question:"Who is not a member of HUNTR/X?",
+                options:["Zoey","Rumi", "Hana", "Mira"],
+                answer:"c"
             },
             {
                 question:"What Korean traditional alcoholic drink is white and made with rice?",
@@ -118,7 +115,6 @@ function Quiz() {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
     const [showResult, setShowResult] = useState("start");
-    const [showImmResult, setShowImmResult] = useState(false);
 
     /**
      * Handles the user's answer to the current question.

@@ -1,6 +1,4 @@
-import React from 'react';
 import Quiz from './Quiz';
-import { Container } from '@mui/material';
 
 const backStyles = {        
     backgroundImage: 'url("CKS-Front.png")',

@@ -7,8 +7,8 @@ import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
 import Fade from '@mui/material/Fade';
 import Grow from '@mui/material/Grow';
-import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import PropTypes from 'prop-types';
 
 
 import './styles.css';
@@ -45,16 +45,6 @@ const handleChange = (event, newValue) => {
 
 const [error, setError] = React.useState(null);
 
-/**
- * Sets the error state with the provided error message.
- *
- * @param {string} error - The error message to be set.
- * @return {void}
- */
-const handleError = (error) => {
-    //console.error("Error: " + error);
-    setError(error);
-}
 
 const [correctAnswer, setCorrectAnswer] = React.useState(null);
 
@@ -368,3 +358,11 @@ React.useEffect(() => {
     </Grow>
   );
 }
+
+Question.propTypes = {
+  question: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  answer: PropTypes.string.isRequired,
+  view: PropTypes.any,
+  onAnswer: PropTypes.func.isRequired,
+};
